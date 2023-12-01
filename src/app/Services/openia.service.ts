@@ -1,0 +1,33 @@
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class OpeniaService {
+
+  private CHATGPT_KEY = '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';
+
+  async generateItinerary(topic: string): Promise<string> {
+    const bodyRequest = {
+      model: 'gpt-3.5-turbo',
+      max_tokens: 250,
+      messages: [
+        { role: 'user', content: `Genera un itinerario completo para aprender ${topic} y omite la cortesía` }
+      ]
+    };
+    const request: RequestInit = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${this.CHATGPT_KEY}`
+      },
+      body: JSON.stringify(bodyRequest)
+    };
+    const response = await fetch('https://api.openai.com/v1/chat/completions', request);
+    if (!response.ok) {
+      throw new Error(`Error en la solicitud: ${response.statusText}`);
+    }
+    const responseData = await response.json();
+    return responseData.choices[0].message.content;
+  }
+}

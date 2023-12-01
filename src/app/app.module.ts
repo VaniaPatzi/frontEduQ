@@ -8,6 +8,7 @@ import { RegistroNotasComponent } from './component/registro-notas/registro-nota
 import { MenuComponent } from './component/menu/menu.component';
 import { RegistroComponent } from './component/registro-notas/registro/registro.component';
 import { ItinerarioComponent } from './component/itinerario/itinerario.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ItinerarioComponent } from './component/itinerario/itinerario.component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
