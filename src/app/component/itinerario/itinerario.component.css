@@ -1,0 +1,12 @@
+element.style {
+    text-align: center;
+    background-color: rgb(189, 185, 178);
+    padding: 10px;
+
+}
+.container {
+    text-align: center;
+    background: wheat;
+    padding: 10px;
+    border-radius: 20px;
+}
