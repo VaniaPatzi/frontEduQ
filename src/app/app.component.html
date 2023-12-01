@@ -32,8 +32,13 @@
           <li><a href="#" class="nav-link px-2 text-white">Lista de tarea</a></li>
         </ul> -->
 
+        <section *ngIf="auth.user$ | async as user">
+          <img [src]="user.picture" alt="mdo" width="32" height="32" class="rounded-circle">
+        </section>
+        
+       
         <div class="text-end">
-          <button type="button" class="btn btn-warning">Salir</button>
+          <button type="button" (click)="logOut()" class="btn btn-warning">Salir</button>
         </div>
       </div>
     </div>
@@ -41,3 +46,5 @@
 
 
 <router-outlet></router-outlet>
+
+
