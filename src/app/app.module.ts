@@ -9,6 +9,7 @@ import { ItinerarioComponent } from './component/itinerario/itinerario.component
 import { FormsModule } from '@angular/forms';
 import { AuthModule } from '@auth0/auth0-angular';
 import { MenuBarComponent } from './component/menu-bar/menu-bar.component';
+import { IntroduccionComponent } from './component/introduccion/introduccion.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,6 +17,7 @@ import { MenuBarComponent } from './component/menu-bar/menu-bar.component';
     MenuComponent,
     ItinerarioComponent,
     MenuBarComponent,
+    IntroduccionComponent,
   ],
   imports: [
     BrowserModule,
