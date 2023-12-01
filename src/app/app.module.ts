@@ -7,14 +7,15 @@ import { InicioComponent } from './component/inicio/inicio.component';
 import { MenuComponent } from './component/menu/menu.component';
 import { ItinerarioComponent } from './component/itinerario/itinerario.component';
 import { FormsModule } from '@angular/forms';
-
 import { AuthModule } from '@auth0/auth0-angular';
+import { MenuBarComponent } from './component/menu-bar/menu-bar.component';
 @NgModule({
   declarations: [
     AppComponent,
     InicioComponent,
     MenuComponent,
-    ItinerarioComponent
+    ItinerarioComponent,
+    MenuBarComponent,
   ],
   imports: [
     BrowserModule,

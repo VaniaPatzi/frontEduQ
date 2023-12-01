@@ -2,13 +2,14 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InicioComponent } from './component/inicio/inicio.component';
 import { MenuComponent } from './component/menu/menu.component';
-import { AppComponent } from './app.component';
+import { MenuBarComponent } from './component/menu-bar/menu-bar.component';
 
 const routes: Routes = [
-  {path: ' ', redirectTo: 'login', pathMatch: 'full'},
-  {path: 'login', component: InicioComponent},
-  {path: 'inicio', component:AppComponent},
-  {path: 'menu', component: MenuComponent}
+  {path: '', redirectTo: 'inicio', pathMatch: 'full'},
+  {path: 'inicio', component: InicioComponent},
+  {path: 'menuBar', component: MenuBarComponent},
+  {path: 'menu', component: MenuComponent},
+  {path: '**', redirectTo: 'inicio', pathMatch: 'full'},
 ];
 
 @NgModule({
