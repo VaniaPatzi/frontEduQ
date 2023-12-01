@@ -13,19 +13,51 @@ export class MenuComponent {
   // });
   topic: string  = '';
   constructor(private openaiService: OpeniaService){}
-  // private CHATGPT_KEY: string = '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';
-
+  private CHATGPT_KEY: string = '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';
+  
+  
   async onClickSearch(): Promise<void> {
-    try {
-      const response = await this.openaiService.generateItinerary(this.topic);
-      console.log('Respuesta de OpenAI:', response);
-      // Aquí puedes manipular la respuesta como desees (por ejemplo, mostrarla en la interfaz)
-    } catch (error) {
-      console.error('Error al generar el itinerario:', error);
-    }
+    
+  //   try {
+  //     const peticion = {
+  //         "id": "chatcmpl-abc123",
+  //         "object": "chat.completion",
+  //         "created": 1677858242,
+  //         "model": "gpt-3.5-turbo-1106",
+  //         "usage": {
+  //             "prompt_tokens": 13,
+  //             "completion_tokens": 7,
+  //             "total_tokens": 20
+  //         },
+  //         "choices": [
+  //             {
+  //                 "message": {
+  //                     "role": "assistant",
+  //                     "content": "\n\nThis is a test!"
+  //                 },
+  //                 "finish_reason": "stop",
+  //                 "index": 0
+  //             }
+  //         ]
+  //     };
+  
+  //     const response = await fetch('https://api.openai.com/v1/chat/completions', {
+  //         method: 'POST',
+  //         headers: {
+  //             'Content-Type': 'application/json',
+  //             // Add your OpenAI API key here
+  //             'Authorization': 'Bearer '+ this.CHATGPT_KEY,
+  //             "OpenAI-Organization" : "org-ppADaf576g6b981vvfxhMCpS"
+  //         },
+  //         body: JSON.stringify(peticion)
+  //     });
+  
+  //     console.log(response)
+  
+  // } catch (error) {
+  //     console.error('Error al generar el itinerario:', error);
+  // }
   }
-  
-  
   
   // async callToChatGpt(promp: string):Promise<string> {
   //   const bodyRequest : Record<string,unknown> = {
