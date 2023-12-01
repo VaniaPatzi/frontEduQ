@@ -19,7 +19,7 @@ import { AuthModule } from '@auth0/auth0-angular';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
 
     AuthModule.forRoot({
       domain: 'dev-bi4egrb5e4ay8rvj.us.auth0.com',
