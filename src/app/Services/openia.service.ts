@@ -6,8 +6,6 @@ import { Injectable } from '@angular/core';
 export class OpeniaService {
 
   // private CHATGPT_KEY = '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';
-  private CHATGPT_KEY = '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';
-
 
   // async generateItinerary(topic: string): Promise<string> {
   //   const bodyRequest = {

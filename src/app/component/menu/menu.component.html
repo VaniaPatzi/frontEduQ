@@ -1,24 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Intinerario de Estudio</title>
-  <span class="fs-4 fw-bold fst-italic">EDU Questions</span>
-</head>
-<h1 class="text-center">EDU-QUESTIONS</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intinerario de Estudio</title>
+    <span class="fs-4 fw-bold fst-italic">EDU Questions</span>
+  </head>
+  <h1 class="text-center">EDU-QUESTIONS</h1>
 
-<body>
-  <p class="text-center">Ingrese un tema para poder generar un intinerario de estudio</p>
-  <div class="buscador">
-    <input [(ngModel)]="topic" class="text-center" type="text" placeholder="Crear Itinerario de Estudio">
-    <button (click)="onClickSearch()">Generar itinerario</button>
-  </div>  
+  <body>
+    <p class="text-center">
+      Ingrese un tema para poder generar un intinerario de estudio
+    </p>
+    <div class="buscador">
+      <input
+        [(ngModel)]="topic"
+        class="text-center"
+        type="text"
+        placeholder="Crear Itinerario de Estudio"
+      />
+      <button (click)="onClickSearch()" [disabled]="esperandoRespuesta">
+        <span *ngIf="esperandoRespuesta">Generando...</span>
+        <span *ngIf="!esperandoRespuesta">Generar itinerario</span>
+      </button>
+    </div>
 
-  <div id="searchResult" class="container">
-    
-  </div>
-</body>
+    <div
+      id="searchResult"
+      class="container"
+      [innerHTML]="respuestaGPT"
+      style="white-space: pre-line"
+    ></div>
+  </body>
 </html>
-
-

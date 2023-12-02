@@ -1,4 +1,3 @@
-
 body {
   background-color: gold;
 }
@@ -10,8 +9,7 @@ body {
   color: black;
   border-radius: 4px;
   box-sizing: border-box;
-  width: calc(50% - 18px); 
-  
+  width: calc(50% - 18px);
 }
 .buscador button {
   border: 0px;
@@ -23,6 +21,11 @@ body {
   cursor: pointer;
 }
 
+.buscador button:disabled {
+  cursor: not-allowed;
+  background-color: gray;
+}
+
 .buscador {
   text-align: center;
   background: white;
@@ -30,11 +33,12 @@ body {
   border-radius: 20px;
 }
 .container {
-  text-align: center;
-  background: darkgray;
+  background: rgb(46, 49, 49);
   padding: 20px;
   border-radius: 20px;
   margin-top: 10px;
+  color: white;
+  text-align: justify;
 }
 /*------------------------------------------------------------*/
 /* .form-control-dark {
@@ -48,8 +52,8 @@ body {
   .text-small {
     font-size: 85%;
   } */
-  
-  /* .dropdown-toggle:not(:focus) {
+
+/* .dropdown-toggle:not(:focus) {
     outline: 0;
   }
    */
