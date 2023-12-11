@@ -10,7 +10,6 @@ import { FormsModule } from '@angular/forms';
 import { AuthModule } from '@auth0/auth0-angular';
 import { MenuBarComponent } from './component/menu-bar/menu-bar.component';
 import { IntroduccionComponent } from './component/introduccion/introduccion.component';
-import { ComponentComponent } from './component/component.component';
 import { ListarTareaComponent } from './component/listar-tarea/listar-tarea.component';
 @NgModule({
   declarations: [
@@ -20,7 +19,6 @@ import { ListarTareaComponent } from './component/listar-tarea/listar-tarea.comp
     ItinerarioComponent,
     MenuBarComponent,
     IntroduccionComponent,
-    ComponentComponent,
     ListarTareaComponent,
   ],
   imports: [
