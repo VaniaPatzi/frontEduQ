@@ -11,6 +11,7 @@ import { AuthModule } from '@auth0/auth0-angular';
 import { MenuBarComponent } from './component/menu-bar/menu-bar.component';
 import { IntroduccionComponent } from './component/introduccion/introduccion.component';
 import { ListarTareaComponent } from './component/listar-tarea/listar-tarea.component';
+import { MostrarTareaComponent } from './component/mostrar-tarea/mostrar-tarea.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +21,7 @@ import { ListarTareaComponent } from './component/listar-tarea/listar-tarea.comp
     MenuBarComponent,
     IntroduccionComponent,
     ListarTareaComponent,
+    MostrarTareaComponent,
   ],
   imports: [
     BrowserModule,
