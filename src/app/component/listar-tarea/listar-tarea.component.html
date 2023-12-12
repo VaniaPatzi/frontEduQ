@@ -6,10 +6,24 @@
         <option value="3">Three</option>
       </select>
       <H1>MATERIA</H1>
-
-      <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Materia" aria-label="Username">
-        
-        <input type="text" class="form-control" placeholder="Nota" aria-label="Server">
+      <form>
+        <label for="nombre">Nombre de la materia:</label>
+        <input type="text" id="nombre" [(ngModel)]="nuevaMateria.nombre" required>
+    
+        <label for="nota">Nota:</label>
+        <input type="number" id="nota" [(ngModel)]="nuevaMateria.nota" required>
+    
+        <button type="button" (click)="agregarMateria()">Agregar Materia</button>
+      </form>
+    
+      <ul>
+        <li *ngFor="let materia of materias; let i = index">
+          {{ materia.nombre }} - Nota: {{ materia.nota }}
+          <button type="button" (click)="eliminarMateria(i)">Eliminar</button>
+        </li>
+      </ul>
+    
+      <div *ngIf="notaMasBaja !== undefined">
+        Nota más baja: {{ notaMasBaja }}
       </div>
 </div>
