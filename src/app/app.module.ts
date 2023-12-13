@@ -13,6 +13,7 @@ import { IntroduccionComponent } from './component/introduccion/introduccion.com
 import { ListarTareaComponent } from './component/listar-tarea/listar-tarea.component';
 import { MostrarTareaComponent } from './component/mostrar-tarea/mostrar-tarea.component';
 import { LoginComponent } from './component/login/login.component';
+import { ShowItinerarioComponent } from './component/show-itinerario/show-itinerario.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +25,7 @@ import { LoginComponent } from './component/login/login.component';
     ListarTareaComponent,
     MostrarTareaComponent,
     LoginComponent,
+    ShowItinerarioComponent,
   ],
   imports: [
     BrowserModule,
