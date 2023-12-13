@@ -1,87 +1,71 @@
-<body>
-   
-
-    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
-      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
-              id="bd-theme"
-              type="button"
-              aria-expanded="false"
-              data-bs-toggle="dropdown"
-              aria-label="Toggle theme (auto)">
-        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
-        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
-      </button>
-      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
-            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#sun-fill"></use></svg>
-            Light
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
-            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
-            Dark
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
-            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#circle-half"></use></svg>
-            Auto
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-      </ul>
-    </div>
-
-    
-<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
-  <symbol id="aperture" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
-    <circle cx="12" cy="12" r="10"/>
-    <path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/>
-  </symbol>
-  <symbol id="cart" viewBox="0 0 16 16">
-    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-  </symbol>
-  <symbol id="chevron-right" viewBox="0 0 16 16">
-    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-  </symbol>
-</svg>
-
-
-<main>
-  <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary">
-    <div class="col-md-6 p-lg-5 mx-auto my-5">
-      <h1 class="display-3 fw-bold">EDU-QUESTIONS</h1>
-      <h3 class="fw-normal text-muted mb-3">APRIENDE CON NOSOTROS</h3>
-      <div class="d-flex gap-3 justify-content-center lead fw-normal">
-        
+<main class="container">
+  <div class="row mt-1">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body bg-dark text-white">
+          <div class="row">
+            <div class="col-12">
+              <h1 class="w-100 text-center display-3 fw-bold">EDU-QUESTIONS</h1>
+              <h3 class="w-100 text-center fw-normal mb-3">
+                APRENDE CON NOSOTROS
+              </h3>
+              <h4 class="w-100 text-center" style="text-transform: uppercase">
+                Bienvenid@
+                <span *ngIf="auth.user$ | async as user">{{
+                  user["name"]
+                }}</span>
+              </h4>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="product-device shadow-sm d-none d-md-block"></div>
-    <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
-  </div>
-
-  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
-    <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-      <div class="my-3 py-3">
-        <h2 class="display-5">Aprendizaje</h2>
-        <p class="lead">And an even wittier subheading.</p>
-      </div>
-      <div class="bg-body-tertiary shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-    </div>
-    <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-      <div class="my-3 p-3">
-        <h2 class="display-5">Tarea</h2>
-        <p class="lead">And an even wittier subheading.</p>
-      </div>
-      <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
     </div>
   </div>
 
+  <div class="row mt-2">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="row" *ngIf="listGradosUsuario.length > 0">
+            <div class="col-12">
+              <h4 class="w-100 text-center">TUS REGISTROS</h4>
+            </div>
+            <div
+              class="col-md-4"
+              *ngFor="let item of listGradosUsuario; let i = index"
+            >
+              <div class="card">
+                <div class="card-body bg-warning">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <p><strong>Nivel: </strong> {{ item.nivel }}</p>
+                      <p><strong>Grado: </strong> {{ item.grado }}</p>
+                      <p class="mb-0">
+                        <strong>Materias: </strong>
+                        <span>{{ item.materias.length }}</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer">
+                  <a
+                    routerLink="/itinerario{{ item.id }}"
+                    class="btn btn-success btn-block"
+                    >Programar itinerarios</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row" *ngIf="listGradosUsuario.length == 0">
+            <div class="col-12">
+              <h4 class="text-gray w-100 text-center" style="color:gray">NO TIENES REGISTROS AÚN</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-
- 
+  <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+</main>
