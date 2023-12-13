@@ -1,12 +1,70 @@
-element.style {
+body {
+    background-color: gold;
+  }
+  .buscador input {
+    outline: none;
+    font-size: 25px;
+    padding: 8px;
+    color: black;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: calc(50% - 18px);
+  }
+  .buscador button {
+    border: 0px;
+    background: midnightblue;
+    color: white;
+    border-radius: 5px;
+    padding: 12px 9px;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  
+  .buscador button:disabled {
+    cursor: not-allowed;
+    background-color: gray;
+  }
+  
+  .buscador {
     text-align: center;
-    background-color: rgb(189, 185, 178);
-    padding: 10px;
-
-}
-.container {
-    text-align: center;
-    background: wheat;
-    padding: 10px;
+    background: white;
+    padding: 20px;
     border-radius: 20px;
-}
+  }
+  .input_genera{
+    border: none;
+    border-bottom: solid 1px gray;
+    margin-right: 15px;
+    border-radius: 0;
+  }
+  
+  .text_grado{
+    font-size: 1.1em;
+    font-weight: bold;
+  }
+  
+  .contenedor_consulta {
+    padding: 20px;
+    border-radius: 20px;
+    margin-top: 10px;
+    color: white;
+    text-align: justify;
+  }
+  /*------------------------------------------------------------*/
+  /* .form-control-dark {
+        border-color: var(--bs-gray);
+      }
+      .form-control-dark:focus {
+        border-color: #fff;
+        box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .25);
+      }
+      
+      .text-small {
+        font-size: 85%;
+      } */
+  
+  /* .dropdown-toggle:not(:focus) {
+        outline: 0;
+      }
+       */
+  
