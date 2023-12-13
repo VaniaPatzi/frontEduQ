@@ -1,1 +1,42 @@
-<p>show-itinerario works!</p>
+<div class="container my-3">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header bg-warning">
+            <div class="row">
+              <div class="col-md-6">
+                <p><strong>Nivel: </strong>{{ oGrado.nivel }}</p>
+              </div>
+              <div class="col-md-6">
+                <p><strong>Grado: </strong>{{ oGrado.grado }}</p>
+              </div>
+              <div class="col-md-6">
+                <p><strong>Materia: </strong>{{ oItinerario.materia.nombre }}</p>
+              </div>
+              <div class="col-md-6">
+                <p><strong>Tema: </strong>{{ oItinerario.tema }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="card-body bg-dark text-white">
+            <div class="row">
+              <div class="col-12">
+                <h4 class="w-100 text-center">ITINERARIO</h4>
+                <p style="white-space: pre-line">
+                  {{ oItinerario.res_itinerario }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <a
+          routerLink="/itinerario/{{ oItinerario.usuario_grado_id }}"
+          class="btn btn-dark"
+          >Volver</a
+        >
+      </div>
+    </div>
+  </div>
+  
