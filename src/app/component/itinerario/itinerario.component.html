@@ -1,11 +1,109 @@
-<br>
-<div>
-    <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Cual es tu duda?" aria-label="Recipient's username" aria-describedby="button-addon2">
-        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Enviar</button>
+<div class="container-fluid">
+  <div class="row mt-3">
+    <div class="col-12">
+      <h2 class="w-100 text-center">PROGRAMAR ITINERARIOS</h2>
     </div>
-      <div class="container">
-        dsdsds
-
+    <div class="col-md-5 mx-auto">
+      <div class="card">
+        <div class="card-body bg-warning">
+          <div class="row">
+            <div class="col-12">
+              <h2 class="w-100 text-center text-dark text_grado">
+                NIVEL: {{ oGrado.nivel }}
+              </h2>
+              <h2 class="w-100 text-center text-dark text_grado">
+                GRADO: {{ oGrado.grado }}
+              </h2>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 contenedor_consulta">
+      <div class="card">
+        <div class="card-body bg-dark text-white">
+          <p class="text-center">
+            Selecciona la materia con la que quieres crear itinerarios para los
+            diferentes temas
+          </p>
+          <div class="row">
+            <div class="col-12 mb-2">
+              <select
+                [(ngModel)]="materia_actual"
+                name="materia_actual"
+                class="form-control"
+                (change)="seleccionaMateria()"
+              >
+                <option value="">- SELECCIONAR MATERIA -</option>
+                <option
+                  *ngFor="let materia of listMaterias"
+                  [value]="materia.id"
+                >
+                  {{ materia.nombre }} ({{ materia.estado }})
+                </option>
+              </select>
+            </div>
+          </div>
+          <div class="col-12" *ngIf="materia_actual != ''">
+            <div class="buscador">
+              <input
+                [(ngModel)]="topic"
+                class="text-center input_genera"
+                type="text"
+                placeholder="Ingresa el tema..."
+              />
+              <button (click)="onClickSearch()" [disabled]="esperandoRespuesta">
+                <span *ngIf="esperandoRespuesta">Generando...</span>
+                <span *ngIf="!esperandoRespuesta">Generar itinerario</span>
+              </button>
+            </div>
+
+            <div
+              id="searchResult"
+              class="container"
+              [innerHTML]="respuestaGPT"
+              style="white-space: pre-line"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <a routerLink="/inicio" class="btn btn-dark">Volver al inicio</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card rounded-0" style="margin-top: 30px">
+        <div class="card-header bg-dark rounded-0">
+          <h4 class="text-white w-100 text-center">TUS ITINERARIOS</h4>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-12" *ngFor="let item of listItinerarios">
+              <div class="card rounded">
+                <div class="card-body bg-primary text-white rounded-top">
+                  <div class="row">
+                    <div class="col-12">
+                      <p><strong>Materia: </strong>{{ item.materia.nombre }}</p>
+                      <p><strong>Tema: </strong>{{ item.tema }}</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer bg-dark">
+                  <a
+                    routerLink="/itinerario/show/{{ item.id }}"
+                    class="btn btn-success"
+                    >Ver itinerario</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
