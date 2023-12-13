@@ -24,7 +24,6 @@ import { GradoComponent } from './component/grado/grado.component';
     MenuBarComponent,
     IntroduccionComponent,
     ListarTareaComponent,
-    MostrarTareaComponent,
     LoginComponent,
     ShowItinerarioComponent,
     GradoComponent,
