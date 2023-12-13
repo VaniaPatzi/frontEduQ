@@ -7,11 +7,13 @@ import { IntroduccionComponent } from './component/introduccion/introduccion.com
 import { LoginComponent } from './component/login/login.component';
 import { ShowItinerarioComponent } from './component/show-itinerario/show-itinerario.component';
 import { ItinerarioComponent } from './component/itinerario/itinerario.component';
+import { GradoComponent } from './component/grado/grado.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'inicio', pathMatch: 'full'},
+  {path: '', redirectTo: 'login', pathMatch: 'full'},
   { path: 'login', component: LoginComponent },
   {path: 'inicio', component: InicioComponent},
+  { path: 'nuevo', component: GradoComponent },
   { path: 'itinerario/:id', component: ItinerarioComponent },
   { path: 'itinerario/show/:id', component: ShowItinerarioComponent },
   {path: 'menuBar', component: MenuBarComponent},
