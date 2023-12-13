@@ -14,6 +14,7 @@ import { ListarTareaComponent } from './component/listar-tarea/listar-tarea.comp
 import { MostrarTareaComponent } from './component/mostrar-tarea/mostrar-tarea.component';
 import { LoginComponent } from './component/login/login.component';
 import { ShowItinerarioComponent } from './component/show-itinerario/show-itinerario.component';
+import { GradoComponent } from './component/grado/grado.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +27,7 @@ import { ShowItinerarioComponent } from './component/show-itinerario/show-itiner
     MostrarTareaComponent,
     LoginComponent,
     ShowItinerarioComponent,
+    GradoComponent,
   ],
   imports: [
     BrowserModule,
