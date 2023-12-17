@@ -1,0 +1,10 @@
+.info_usuario {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+  }
+  .usuario span{
+    margin-left: 5px;
+    text-transform: capitalize;
+  }
+  

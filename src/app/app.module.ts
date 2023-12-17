@@ -13,6 +13,7 @@ import { ListarTareaComponent } from './component/listar-tarea/listar-tarea.comp
 import { LoginComponent } from './component/login/login.component';
 import { ShowItinerarioComponent } from './component/show-itinerario/show-itinerario.component';
 import { GradoComponent } from './component/grado/grado.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +28,7 @@ import { GradoComponent } from './component/grado/grado.component';
     GradoComponent,
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
