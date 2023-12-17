@@ -13,7 +13,7 @@ import { Usuario } from 'src/app/models/usuario';
 export class GradoComponent {
 
   private CHATGPT_KEY: string =
-  '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';
+  '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';
 esperandoRespuesta: boolean = false;
 enviado: boolean = false;
 oGrado: GradoUsuario = new GradoUsuario();
