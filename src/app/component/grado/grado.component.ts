@@ -22,6 +22,8 @@ oUsuario: Usuario = new Usuario();
 oMaterias: Materia[] = [];
 resultado: String ='';
 errors: String[] = [];
+puntaje_minimo: Number = 60;
+pista_cantidad: Number = 1;
 
 constructor(private router: Router, public grado_service: GradoService) {}
 
@@ -35,11 +37,14 @@ public async getResultados(): Promise<void> {
     let mensaje = `Tengo las siguientes materias y notas: `;
     console.log(this.oMaterias.length);
     this.oMaterias.forEach((item, index) => {
-      mensaje += `${item.nombre} ${item.nota}`;
+      mensaje += `- ${item.nombre.toUpperCase()}: ${item.nota}`;
       if (index < this.oMaterias.length - 1) {
-        mensaje += `, `;
+        mensaje += `\n`;
+      } else {
+        mensaje += `\n`;
       }
     });
+    this.pista_cantidad = this.getCantidadMenores();
     mensaje += `. Necesito saber que me listes las materias con calificacion menor a 60, de la siguiente manera: "Materias con calificacion menor a 60: MATERIA 1, MATERIA2, etc... Y no cambies los nombres que te envío, solo ponlos en mayusculas`;
 
     /* Descomponer las materias segun estos mensajes de prueba recibidos:
@@ -183,5 +188,14 @@ public vaciarValores() {
   this.oMaterias = [];
   this.oGrado.grado = '';
   this.oGrado.nivel = '';
+}
+public getCantidadMenores() {
+  let c_menores = 0;
+  if (this.oMaterias.length > 0) {
+    c_menores = this.oMaterias.filter(
+      (elemento) => elemento.nota < 60
+    ).length;
+  }
+  return c_menores;
 }
 }

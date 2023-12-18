@@ -29,7 +29,7 @@ export class ItinerarioComponent {
     public itinerario_service: ItinerarioService
   ) {}
   private CHATGPT_KEY: string =
-    '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';
+    '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';
 
   ngOnInit(): void {
     let id_url = this.route.snapshot.paramMap.get('id');
