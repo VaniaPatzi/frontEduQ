@@ -1,1 +1,156 @@
-<p>grado works!</p>
+<div class="container">
+    <div class="row mt-2">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-12">
+                <h4 class="w-100 text-center">NUEVO REGISTRO</h4>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Selecciona el grado*:</label>
+                  <select
+                    name="grado"
+                    [(ngModel)]="oGrado.grado"
+                    class="form-control"
+                  >
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Selecciona el nivel*:</label>
+                  <select
+                    name="nivel"
+                    [(ngModel)]="oGrado.nivel"
+                    class="form-control"
+                  >
+                    <option value="PRIMARIA">PRIMARIA</option>
+                    <option value="SECUNDARIA">SECUNDARIA</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-2">
+              <div class="col-12">
+                <h5 class="w-100 text-center font-sm">LISTA DE MATERIAS</h5>
+              </div>
+              <div class="col-md-12 text-center">
+                <button
+                  class="btn btn-primary btn-block btn-flat"
+                  (click)="agregarMateria()"
+                >
+                  Agregar
+                </button>
+              </div>
+            </div>
+            <div class="row mt-2">
+              <div class="col-md-12">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th>Nro.</th>
+                      <th>NOMBRE MATERIA</th>
+                      <th>NOTA</th>
+                      <th>ACCIÓN</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let materia of oMaterias; let i = index">
+                      <td>{{ i + 1 }}</td>
+                      <td>
+                        <input
+                          type="text"
+                          [(ngModel)]="materia.nombre"
+                          [name]="'materia' + i"
+                          [placeholder]="'Nombre Materia ' + (i + 1)"
+                          class="form-control"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          [(ngModel)]="materia.nota"
+                          [name]="'materia' + i"
+                          [placeholder]="'Nota Materia' + (i + 1)"
+                          class="form-control"
+                        />
+                      </td>
+                      <td>
+                        <button
+                          type="button"
+                          class="btn btn-danger"
+                          (click)="eliminarMateria(i)"
+                        >
+                          X
+                        </button>
+                      </td>
+                    </tr>
+                    <tr *ngIf="oMaterias.length == 0">
+                      <td colspan="3" class="text-center">
+                        NO SE AGREGARÓN MATERIAS AÚN
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 text-center" *ngIf="oMaterias.length > 0">
+                <button
+                  class="btn btn-success"
+                  (click)="getResultados()"
+                  [disabled]="esperandoRespuesta"
+                >
+                  <span *ngIf="esperandoRespuesta">OBTENIENDO...</span>
+                  <span *ngIf="!esperandoRespuesta">OBTENER RESULTADOS</span>
+                </button>
+              </div>
+              <div class="col-12 bg-danger text-white mt-3" *ngIf="errors.length > 0">
+                Tienes los siguientes errores:
+                <ul>
+                  <li *ngFor="let error of errors; let i = index">
+                    {{ error }}
+                  </li>
+                </ul>
+              </div>
+              <div class="alert alert-success text-center" *ngIf="enviado">
+                <p class="mb-0">¡Registro realizado correctamente!</p>
+              </div>
+            </div>
+            <div class="row" *ngIf="resultado != ''">
+              <div class="col-12">
+                <div class="contenedor_resultado">
+                  <p>
+                    {{ resultado }}
+                  </p>
+                  <a
+                    *ngIf="oGradoCreado.id != 0"
+                    routerLink="/itinerario/{{ oGradoCreado.id }}"
+                    class="btn btn-warning"
+                    >Programar itinerarios</a
+                  >
+                  <button
+                    class="btn btn-xs btn-danger btn_limpia_resp"
+                    (click)="vaciarResultado()"
+                  >
+                    X
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

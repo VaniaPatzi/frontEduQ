@@ -1,0 +1,17 @@
+.contenedor_resultado {
+    position: relative;
+    border: solid 1px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: -3px 3px 3px 0px rgb(158, 158, 158);
+    background-color: black;
+    color: white;
+  }
+  
+  .btn_limpia_resp{
+    font-size: 0.7em;
+    position: absolute;
+    top: -10px;
+    right: -5px;
+  }
+  
